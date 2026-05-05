@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="buynow.css">
+</head>
+<body>
+    <div class="main-body">
+    <div class="addr">
+        <input type="text" placeholder="Type your delivery address" style="width: 647px;
+  height: 33px;
+  border-radius: 12px;
+  border-color: blue;">
+    </div>
+    
+        <p style="font-family: arial,helvetica,sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 470px;">Payment Methods:</p>
+  <div class="payment" style="margin-right: 480px;
+  font-weight: bold;
+  font-family: sans-serif;">
+    
+        <input type="radio">
+        <label for="cash">Cash on Delivery</label>
+       <br>
+    
+
+    
+        <input type="radio" onclick="payment('pprice')" >
+        
+        <label for="cash">Online payment</label>
+    </div>
+    <div>
+        <p>______________________________________________________________________________ </p>
+        
+                                                            
+        <p >Total Amount                                             </p>
+        <h4 id="pprice"></h4>
+        <p>_______________________________________________________________________________</p>
+    </div>
+    <a href="order.html">
+    <button style="background: linear-gradient(135deg, #00d4ff, #00ff88);
+  border-radius: 25px;
+  height: 37px;
+  width: 294px;
+  font-weight: bold;
+  color: white"; onclick="buyNow()" >Buy Now</button>
+  </a>
+  <audio id="ringtone" >
+    <source src="mebuy.wav" type="audio/wav">
+  </audio>
+    </div>
+        <div class="logo">
+        <img src="mebuy.png">
+    </div>
+<script>
+function buyNow(){
+    // flag set cheyyu
+    let audio =
+    document.getElementById("ringtone")
+    audio.play()
+
+    alert("Your order has been placed successfully!.Thank you for shopping with us.");
+
+    // page redirect
+    window.location.href = "order.html";
+    
+}
+</script>
+<script>
+
+function payment(priceId) {
+    var price = document.getElementById(priceId).innerText;
+    localStorage.setItem("price", price);
+    alert(price+" You have paid this amount from your bank account to MeBuy!.");
+}
+</script>
+
+<script>
+document.getElementById("pprice").innerText = localStorage.getItem("price");
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
+<script>
+VANTA.FOG({
+  el: "#bg-animation",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+
+  highlightColor: 0x00ff9f,  // green glow
+  midtoneColor: 0x00d4ff,    // blue
+  lowlightColor: 0x0b0f2a,   // dark
+  baseColor: 0x0b0f2a,       // background
+
+  blurFactor: 0.6,
+  speed: 1.2,
+  zoom: 1.0
+});
+</script>
+
+</body>
+</html>

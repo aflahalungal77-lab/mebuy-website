@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeBuy Home Page</title>
+
+    <link rel="stylesheet" href="style.css">
+     <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    #bg {
+      width: 100%;
+      height: 100vh;
+    }
+
+    .content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+    <div id="bg"></div>
+
+<div class="content">
+  
+</div>
+ 
+
+
+ <div class="top-bar">
+
+
+
+
+    <div class="logo">
+        <img src="mebuy.png">
+    </div>
+    
+    <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search shoes...">
+    <span class="icon" onclick="searchProduct()">🔍︎</span>
+</div>
+    
+
+    <div class="login">
+        <a href="login.html">
+            <button>Login</button>
+        </a>
+    </div>
+
+</div>
+
+
+    <div class="container">
+          
+    
+       
+        
+        <div class="card">
+            <h2>PUMA</h2>
+            <img class="pma" src="puma1.jpg" alt="puma shoe" onclick="window.location.href='login.html'">
+            <p>Puma Mens Pulse Pro Generative Cyclone Running Shoe</p>
+            
+            
+        </div>
+        <div class="card">
+            <h2>NIKE</h2>
+            
+            <img  class="nike" src="nike3.jpg"alt="nike shoe" onclick="window.location.href='login.html'">
+            <p>Nike Mens Winflo 11 Running Shoes</p>
+                
+            
+
+        </div>            
+        <div class="card">
+            <h2>ADIDAS</h2>
+            <img class="ad" src="adida.jpg" alt="adidas shoe" onclick="window.location.href='login.html'">
+            <p>Adidas Mens Torite 2 M Running Shoes</p>
+        </div>
+         <div class="card">
+            <h2>HOGENT</h2>
+            <img class="hogent" src="new.jpg"alt="hogent shoe" onclick="window.location.href='login.html'">
+            <p><strong> Toe Shoes for Men Work Shoes Men </strong></p>
+    
+        </div>
+    </div>   
+
+        <footer class="footer">
+
+<div class="footer-content">
+
+    <div>
+        <h3>MeBuy</h3>
+        <p>Best shoes for your style</p>
+    </div>
+
+    <div>
+        <h4>Quick Links</h4>
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+    </div>
+
+    <div>
+        <h4>Contact</h4>
+        <p>Email: mebuy@gmail.com</p>
+    </div>
+
+</div>
+
+<p class="copy">© 2026 MeBuy</p>
+
+</footer>
+        
+    </div>
+    
+
+ <script>
+function searchProduct(){
+    let input = document.getElementById("searchInput").value.toLowerCase();
+
+    let cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+        let text = card.innerText.toLowerCase();
+
+        if(text.includes(input)){
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+</script>
+
+
+<!-- REQUIRED SCRIPTS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.halo.min.js"></script>
+
+<script>
+VANTA.HALO({
+  el: "#bg",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+backgroundColor: 0x081c2c,   // dark blue (logo background feel)
+baseColor: 0x00ff88,         // neon green (logo green)
+  size: 1.0
+});
+</script>
+
+
+
+
+    
+    
+</body>
+</html>
